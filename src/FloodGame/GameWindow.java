@@ -12,7 +12,6 @@ public class GameWindow implements ActionListener {
     private String title;
     protected int width;
     protected int height;
-    protected static int moveCount = 0;
     protected JButton button1 = new JButton("Red");
     protected JButton button2 = new JButton("Orange");
     protected JButton button3 = new JButton("Yellow");
@@ -27,6 +26,7 @@ public class GameWindow implements ActionListener {
     protected boolean bluePressed = false;
     protected boolean magentaPressed = false;
     protected boolean cyanPressed = false;
+    protected Color floodColor = Color.BLACK;
     public GameWindow(String title, int width, int height) {
         JFrame gameFrame = new JFrame(title);
         gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -73,27 +73,33 @@ public class GameWindow implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        moveCount++;
         if(e.getActionCommand() == "Red") {
             redPressed = true;
+            System.out.println("Red was pressed!");
         }
         else if(e.getActionCommand() == "Orange") {
             orangePressed = true;
+            System.out.println("Orange was pressed!");
         }
         else if(e.getActionCommand() == "Yellow") {
             yellowPressed = true;
+            System.out.println("Yellow was pressed!");
         }
         else if(e.getActionCommand() == "Green") {
             greenPressed = true;
+            System.out.println("Green was pressed!");
         }
         else if(e.getActionCommand() == "Blue") {
             bluePressed = true;
+            System.out.println("Blue was pressed!");
         }
         else if(e.getActionCommand() == "Magenta") {
             magentaPressed = true;
+            System.out.println("Magenta was pressed!");
         }
         else if(e.getActionCommand() == "Cyan") {
             cyanPressed = true;
+            System.out.println("Cyan was pressed!");
         }
     }
 }
